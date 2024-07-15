@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/duotone.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/brands.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <div class="profile-l">
+                    <img src="profile-picture.jpg" alt="Profile Picture">
+                    <p>good morning, <span id="username">John Doe</span></p>
+                </div>
+                <div class="profile-r">
+                    <button class="settings-btn">
+                        <i class="fa-light fa-gear"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="your-notes-text">
+                <p>your</p>
+                <p>notes <span id="note-count"></span>
+                </p>
+            </div>
+
+            <div class="tags">
+                <button class="tag" onclick="filterNotes('personal')">#personal</button>
+                <button class="tag" onclick="filterNotes('work')">#work</button>
+                <button class="tag" onclick="filterNotes('home')">#home</button>
+            </div>
+        </header>
+        <main>
+            <div id="notes"></div>
+            <button id="add-note-btn">
+                <i class="fa-regular fa-plus"></i>
+            </button>
+        </main>
+    </div>
+
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <input type="text" id="note-title" placeholder="Title">
+            <textarea id="note-content" placeholder="Details"></textarea>
+            <input type="text" id="note-tags" placeholder="Tags (comma separated)">
+            <button id="save-note-btn">Save</button>
+        </div>
+    </div>
+
+    <div id="user-info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <input type="text" id="user-name" placeholder="Your Name">
+            <input type="email" id="user-email" placeholder="Your Email">
+            <input type="number" id="user-age" placeholder="Your Age">
+            <button id="save-user-info-btn">Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
